@@ -23,8 +23,11 @@ class FiveCommentsWritten
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle(CommentWritten $event)
     {
-        //
+        $comments = Comment::count();
+        if($comments == 5){
+            echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your fifth comment!";
+        }
     }
 }

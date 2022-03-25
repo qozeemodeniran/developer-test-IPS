@@ -23,8 +23,12 @@ class FirstCommentWritten
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle(CommentWritten $event)
     {
-        //
+        $comments = Comment::count();
+        if($comments == 1){
+            echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your first comment!";
+        }
+        
     }
 }

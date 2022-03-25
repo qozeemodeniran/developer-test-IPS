@@ -23,8 +23,11 @@ class TwentyCommentWritten
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle(CommentWritten $event)
     {
-        //
+        $comments = Comment::count();
+        if($comments == 20){
+            echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your twentieth comment!";
+        }
     }
 }
