@@ -21,5 +21,6 @@ class AchievementsController extends Controller
     public function store(Request $request)
     {
         CommentWritten::dispatch($comment);
+        LessonWatched::dispatch($lesson);
     }
 }
