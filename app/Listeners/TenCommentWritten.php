@@ -27,7 +27,10 @@ class TenCommentWritten
     {
         $comments = Comment::count();
         if($comments == 10){
-            echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your tenth comment!";
+            array_push('unlocked_achievements', '10 comments written');
+            array_push('next_available_achievements', '20 comments written');
+            
+            // echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your tenth comment!";
         }
     }
 }

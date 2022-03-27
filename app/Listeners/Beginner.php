@@ -25,6 +25,8 @@ class Beginner
      */
     public function handle($event)
     {
-        //
+       if (count($unlocked_achievements) == 0) {
+           $current_badge .= 'Beginner';
+       }
     }
 }

@@ -26,6 +26,9 @@ class TenLessonsWatched
     public function handle(LessonWatched $event)
     {
         $lessons = DB::table('lesson_users')->withCount('lesson_id', '=', 10)->having('watched', '=', 1);
-        echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for wathing your tenth lesson!";
+        array_push('unlocked_achievements', '10 lessons watched');
+        array_push('next_available_achievements', '25 lessons watched');
+
+        // echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for wathing your tenth lesson!";
     }
 }

@@ -5,6 +5,7 @@ namespace App\Listeners;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
+
 class FiftyLessonsWatched
 {
     /**
@@ -26,6 +27,8 @@ class FiftyLessonsWatched
     public function handle(LessonWatched $event)
     {
         $lessons = DB::table('lesson_users')->withCount('lesson_id', '=', 50)->having('watched', '=', 1);
-        echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for wathing your fiftieth lesson!";
+        array_push($unlocked_achievements, '50 lessons watched');
+        
+        // echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for wathing your fiftieth lesson!";
     }
 }

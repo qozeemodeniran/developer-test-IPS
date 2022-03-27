@@ -27,7 +27,9 @@ class TwentyCommentWritten
     {
         $comments = Comment::count();
         if($comments == 20){
-            echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your twentieth comment!";
+            array_push('unlocked_achievements', '20 comments written');
+            
+            // echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your twentieth comment!";
         }
     }
 }

@@ -25,6 +25,8 @@ class Advanced
      */
     public function handle($event)
     {
-        //
+        if (count($unlocked_achievements) == 8) {
+            $current_badge .= ', Advanced';
+        }
     }
 }

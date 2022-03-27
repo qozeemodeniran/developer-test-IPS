@@ -27,7 +27,10 @@ class FiveCommentsWritten
     {
         $comments = Comment::count();
         if($comments == 5){
-            echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your fifth comment!";
+            array_push('unlocked_achievements', '5 comments written');
+            array_push('next_available_achievements', '10 comments written');
+
+            // echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your fifth comment!";
         }
     }
 }

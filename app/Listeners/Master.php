@@ -25,6 +25,8 @@ class Master
      */
     public function handle($event)
     {
-        //
+        if (count($unlocked_achievements) == 10) {
+            $current_badge .= ', Master';
+        }
     }
 }

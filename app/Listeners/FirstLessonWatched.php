@@ -26,7 +26,9 @@ class FirstLessonWatched
     public function handle(LessonWatched $event)
     {
         $lessons = DB::table('lesson_users')->where('lesson_id', '=', 1)->where('watched', '=', 1);
+        array_push('unlocked_achievements', 'First lessons watched');
+        array_push('next_available_achievements', '5 lessons watched');
         
-        echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for wathing your first lesson!";
+        // echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for wathing your first lesson!";
     }
 }

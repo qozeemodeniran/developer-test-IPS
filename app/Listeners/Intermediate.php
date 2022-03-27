@@ -25,6 +25,8 @@ class Intermediate
      */
     public function handle($event)
     {
-        //
+        if (count($unlocked_achievements) == 4) {
+            $current_badge .= ', Intermediate';
+        }
     }
 }

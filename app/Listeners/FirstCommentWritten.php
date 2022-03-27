@@ -27,7 +27,10 @@ class FirstCommentWritten
     {
         $comments = Comment::count();
         if($comments == 1){
-            echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your first comment!";
+            array_push('unlocked_achievements', 'first comment written');
+            array_push('next_available_achievements', '3 comments written');
+
+            // echo "Congratulations!!!"  . Auth::user()->name . " You just uncloked an achievement for writing your first comment!";
         }
         
     }
